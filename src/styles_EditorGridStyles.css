@@ -1,0 +1,206 @@
+.canvas-editor-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+}
+
+.editor-element {
+  position: absolute;
+  cursor: move;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.editor-element:hover {
+  outline: 2px solid rgba(0, 123, 255, 0.3);
+}
+
+/* Moveable Controls Styling */
+.moveable-control {
+  z-index: 100;
+}
+
+.moveable-control .moveable-line {
+  background: #007bff !important;
+  border: 1px solid #007bff !important;
+}
+
+.moveable-control .moveable-control-box {
+  border: 2px solid #007bff !important;
+}
+
+.moveable-control .moveable-direction {
+  background: #007bff !important;
+  border: 2px solid #ffffff !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+}
+
+.moveable-control .moveable-direction:hover {
+  background: #0056b3 !important;
+  transform: scale(1.2) !important;
+}
+
+.moveable-control .moveable-rotation {
+  background: #28a745 !important;
+  border: 2px solid #ffffff !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+  margin-top: -25px !important;
+}
+
+.moveable-control .moveable-rotation:hover {
+  background: #1e7e34 !important;
+  transform: scale(1.1) !important;
+}
+
+/* Editor View Menu Styles */
+.editor-view-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 280px;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.menu-section h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 8px;
+}
+
+.menu-item {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-item:last-child {
+  margin-bottom: 0;
+}
+
+.menu-item label {
+  font-size: 14px;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.menu-item input[type="checkbox"] {
+  margin: 0;
+  accent-color: #007bff;
+}
+
+.menu-item select {
+  padding: 6px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  background: white;
+  color: #495057;
+  min-width: 80px;
+}
+
+.menu-item select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.menu-item input[type="range"] {
+  width: 80px;
+  accent-color: #007bff;
+}
+
+.menu-item input[type="color"] {
+  width: 40px;
+  height: 30px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+}
+
+.menu-item input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 3px;
+}
+
+.menu-item input[type="color"]::-moz-color-swatch {
+  border: none;
+  border-radius: 3px;
+}
+
+#opacity-value {
+  font-size: 12px;
+  color: #6c757d;
+  min-width: 35px;
+  text-align: right;
+  font-weight: 500;
+}
+
+/* Grid overlay styles */
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .editor-view-menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+    max-width: none;
+  }
+  
+  .menu-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .menu-item label {
+    justify-content: flex-start;
+  }
+}
+
+/* Animation for smooth transitions */
+.editor-element {
+  transition: outline 0.2s ease;
+}
+
+.moveable-control .moveable-direction,
+.moveable-control .moveable-rotation {
+  transition: all 0.2s ease;
+}
+
+/* Focus states for accessibility */
+.menu-item input:focus,
+.menu-item select:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}

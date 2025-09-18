@@ -1,0 +1,37 @@
+{
+  "name": "canvas-editor-grid-test",
+  "version": "1.0.0",
+  "description": "Canvas-based website editor with grid system and snap-to-grid functionality using daybrush/moveable library",
+  "main": "src/EditorIntegration.ts",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development --open",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "canvas",
+    "editor",
+    "grid",
+    "snap-to-grid",
+    "moveable",
+    "drag-drop",
+    "website-builder"
+  ],
+  "author": "kashifnasim",
+  "license": "MIT",
+  "dependencies": {
+    "moveable": "^0.54.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
